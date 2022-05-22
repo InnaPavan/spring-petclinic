@@ -1,0 +1,14 @@
+node('NODE1') {
+    stage('SourceCode') {
+        // get the code from git repo on the branch sprint1_develop
+        git branch: 'main', url: 'https://github.com/InnaPavan/spring-petclinic.git'
+    }
+
+    stage('Build the code') {
+        sh 'mvn clean package'
+    }
+
+    stage('Archiving and Test Results') {
+        junit '**/surefire-reports/*.xml'
+        archiveArtifacts artifacts: '**/*.jar', followSymlinks: false
+    }
