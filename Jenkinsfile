@@ -12,7 +12,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-         stage('Build') {
+         stage('run java application') {
             steps {
                 sh 'java -jar **/spring-petclinic-2.7.0-SNAPSHOT.jar &'
             }
