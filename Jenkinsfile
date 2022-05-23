@@ -12,6 +12,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+         stage('Build') {
+            steps {
+                sh 'java -jar **/spring-petclinic-2.7.0-SNAPSHOT.jar &'
+            }
+        }
         stage('Archive and Test Results') {
             steps {
                junit '**/surefire-reports/*.xml'
