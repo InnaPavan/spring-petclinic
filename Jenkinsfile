@@ -14,7 +14,7 @@ pipeline {
         }
         stage('run java application') {
             steps {
-                sh 'java -jar **/spring-petclinic-2.7.0-SNAPSHOT.jar &'
+                sh 'java -jar /home/jenkins/root_jenkins/workspace/declarative_petclinic/target/spring-petclinic-2.7.0-SNAPSHOT.jar &'
             }
         }
         stage('Archive and Test Results') {
