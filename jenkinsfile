@@ -12,3 +12,4 @@ node('NODE1') {
         junit '**/surefire-reports/*.xml'
         archiveArtifacts artifacts: '**/*.jar', followSymlinks: false
     }
+}
