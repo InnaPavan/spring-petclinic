@@ -10,7 +10,9 @@ pipeline {
         stage('Build the Code and sonarqube-analysis') {
             steps {
                 withSonarQubeEnv('SONAR_LATEST')
+                {
                 sh 'mvn clean package'
+            }
             }
         }
         
