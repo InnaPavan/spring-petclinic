@@ -7,16 +7,13 @@ pipeline {
                 git branch: 'declarative', url: 'https://github.com/InnaPavan/spring-petclinic.git'
             }
         }
-        stage('Build') {
+        stage('Build the Code and sonarqube-analysis') {
             steps {
+                withSonarQubeEnv('SONAR_LATEST')
                 sh 'mvn clean package'
             }
         }
-        stage('run java application') {
-            steps {
-                sh 'java -jar /home/jenkins/root_jenkins/workspace/declarative_petclinic/target/spring-petclinic-2.7.0-SNAPSHOT.jar &'
-            }
-        }
+        
         stage('Archive and Test Results') {
             steps {
                junit '**/surefire-reports/*.xml'
