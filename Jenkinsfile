@@ -19,7 +19,7 @@ pipeline {
                       [
                          artifactId: 'spring-petclinic', 
                          classifier: '', 
-                         file: 'build/libs/spring-petclinic-2.6.2.jar', 
+                         file: 'build/libs/spring-petclinic-2.6.$(BUILD_NUMBER).jar', 
                          type: 'jar'
                      ]
                ], 
@@ -29,7 +29,7 @@ pipeline {
                nexusVersion: 'nexus3', 
                protocol: 'http', 
                repository: 'maven-releases', 
-               version: '2.6.2'
+               version: '2.6.$(BUILD_NUMBER)'
             }
         }
     }
