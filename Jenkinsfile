@@ -15,7 +15,21 @@ pipeline {
 
         stage('push to nexus') {
             steps {  
-                sh '/opt/gradle-6.8.3/bin/gradle publish'
+                  nexusArtifactUploader artifacts: [
+                      [
+                         artifactId: 'spring-petclinic', 
+                         classifier: '', 
+                         file: 'spring-petclinic-2.6.2.jar', 
+                         type: 'jar'
+                     ]
+               ], 
+               credentialsId: 'nexus', 
+               groupId: 'org.springframework.samples', 
+               nexusUrl: '13.41.202.83:8081', 
+               nexusVersion: 'nexus3', 
+               protocol: 'http', 
+               repository: 'maven-releases', 
+               version: '2.6.2'
             }
         }
     }
