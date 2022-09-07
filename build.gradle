@@ -2,7 +2,6 @@ plugins {
   id 'org.springframework.boot' version '2.6.6'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
   id 'java'
-  id "maven-publish"
 }
 
 apply plugin: 'java'
@@ -40,15 +39,3 @@ dependencies {
 test {
   useJUnitPlatform()
 }
-publishing {
-publications {
-maven(MavenPublication) {
-     artifact bootJar
-}}
-repositories {
-maven {
-url "http://13.41.202.83:8081/repository/maven-releases/"
-credentials {
-username "admin"
-password "Summer@123"
-}}}}
