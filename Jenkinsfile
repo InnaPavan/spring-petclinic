@@ -9,13 +9,13 @@ pipeline {
 
         stage('Build package') {
             steps{
-                sh 'sudo /opt/gradle-6.8.3/bin/gradle clean build'
+                sh '/opt/gradle-6.8.3/bin/gradle clean build'
             }
         }
 
         stage('push to nexus') {
             steps {  
-                sh 'sudo /opt/gradle-6.8.3/bin/gradle publish'
+                sh '/opt/gradle-6.8.3/bin/gradle publish'
             }
         }
     }
