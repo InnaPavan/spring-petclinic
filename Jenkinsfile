@@ -19,7 +19,7 @@ pipeline {
                       [
                          artifactId: 'spring-petclinic', 
                          classifier: '', 
-                         file: 'build/libs/spring-petclinic-2.6.$(BUILD_NUMBER).jar', 
+                         file: 'build/libs/spring-petclinic-2.6.3.jar', 
                          type: 'jar'
                      ]
                ], 
