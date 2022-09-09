@@ -29,7 +29,7 @@ pipeline {
                nexusVersion: 'nexus3', 
                protocol: 'http', 
                repository: 'maven-releases', 
-               version: '2.6.$(BUILD_NUMBER)'
+               version: '2.6.3'
             }
         }
     }
