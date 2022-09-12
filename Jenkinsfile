@@ -19,17 +19,17 @@ pipeline {
                       [
                          artifactId: 'spring-petclinic', 
                          classifier: '', 
-                         file: 'build/libs/spring-petclinic-2.6.4.jar', 
+                         file: 'build/libs/spring-petclinic-2.6.5.jar', 
                          type: 'jar'
                      ]
                ], 
                credentialsId: 'nexus', 
                groupId: 'org.springframework.samples', 
-               nexusUrl: '13.42.12.118:8081', 
+               nexusUrl: '3.8.200.69:8081', 
                nexusVersion: 'nexus3', 
                protocol: 'http', 
                repository: 'maven-releases', 
-               version: '2.6.4'
+               version: '2.6.5'
             }
         }
     }
